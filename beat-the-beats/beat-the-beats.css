@@ -1,0 +1,245 @@
+/**** LESS VARIABLES ********/
+/****** LESS MIXINS *********/
+#beat-beats {
+  position: relative;
+  margin-left: 3em;
+  border: 1px solid #d6d6d6;
+  margin-top: 70px;
+  /* height: 350px; */
+  display: block;
+  margin-bottom: 4em;
+}
+#beat-beats * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#beat-beats #start-btn {
+  color: #fff;
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  background-color: #f2133d;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: .1em;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+}
+#beat-beats #start-btn:hover {
+  background-color: #c70b2e;
+}
+#beat-beats #lights {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 101;
+  margin-left: -123px;
+  margin-top: -70px;
+}
+#beat-beats #lights div {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+#beat-beats #lights div span {
+  vertical-align: middle;
+  display: inline-block;
+  color: #d6d6d6;
+}
+#beat-beats #lights div .light {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  background-color: #d6d6d6;
+}
+#beat-beats #lights div.ready.on .light {
+  background-color: #f2133d;
+}
+#beat-beats #lights div.ready.on .text {
+  color: #444;
+}
+#beat-beats #lights div.set.on .light {
+  background-color: #f7f028;
+}
+#beat-beats #lights div.set.on .text {
+  color: #444;
+}
+#beat-beats #lights div.go.on .light {
+  background-color: #6fc144;
+}
+#beat-beats #lights div.go.on .text {
+  color: #444;
+}
+#beat-beats #labels {
+  width: 124px;
+  padding-top: 60px;
+  padding-left: 20px;
+  text-align: center;
+  float: left;
+  margin-bottom: 2em;
+  z-index: 1;
+}
+#beat-beats #labels div {
+  display: block;
+  width: 97px;
+  height: 90px;
+  background: url('../../../img/article-images/2014-07-hummingbirds/beat-the-beats/labels.jpg') no-repeat 0 0;
+  position: relative;
+}
+#beat-beats #labels div#user {
+  background-position: 0 bottom;
+}
+#beat-beats #labels .explanation {
+  text-align: center;
+  color: #a2a2a2;
+  margin-bottom: .4em;
+  display: block;
+}
+#beat-beats #labels .number {
+  font-size: 2em;
+  font-weight: 600;
+  position: absolute;
+  top: 55px;
+  right: 0;
+}
+#beat-beats #labels #user .number {
+  top: 25px;
+}
+#beat-beats #beat-svg {
+  margin: 2em 1em 1em 140px;
+  display: block;
+  height: 265px;
+}
+#beat-beats #beat-svg rect {
+  stroke: #27272a;
+  fill: transparent;
+}
+#beat-beats #beat-svg line {
+  stroke: #27272a;
+  stroke-width: 1px;
+}
+#beat-beats #beat-svg path {
+  stroke: #f2133d;
+  stroke-width: 1px;
+  fill: transparent;
+}
+#beat-beats #beat-hitzone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(242, 19, 61, 0.9);
+  display: none;
+  z-index: 99;
+  padding: 20px;
+}
+#beat-beats #beat-hitzone .beat-hit {
+  border: 1px dashed #fff;
+  height: 310px;
+  background-color: #f2133d;
+  opacity: 1;
+}
+#beat-beats #beat-hitzone p {
+  color: #fff;
+  text-align: center;
+  font-family: 'Lato', 'Helvetica Neue Light', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: 50%;
+  position: relative;
+  top: 50%;
+  left: 0;
+  margin-top: -12px;
+  max-width: 100%;
+}
+#beat-beats #beat-hitzone .beat-chart-bg {
+  background-color: #7b0a1f;
+  width: 90%;
+  display: none;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  z-index: 9999;
+  height: 20px;
+  margin-left: -45%;
+}
+#beat-beats #beat-hitzone .beat-chart-bg div {
+  background-color: #f2133d;
+  display: block;
+  width: 0;
+  height: 12px;
+  margin-top: 4px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx), (-moz-device-pixel-ratio: 2) {
+  #beat-beats #labels div {
+    background-image: url('../../../img/article-images/2014-07-hummingbirds/beat-the-beats/labels@2x.jpg');
+    background-size: 97px 200px;
+  }
+}
+#wingspans .instructions {
+  font-size: 11px;
+  line-height: 13px;
+  font-family: 'Lato', 'Helvetica Neue Light', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  width: 150px;
+  color: #999;
+}
+#wingspans path.domain {
+  fill: none;
+  stroke: #b2b2b2;
+  stroke-width: 1px;
+}
+#wingspans .tick line {
+  stroke: #b2b2b2;
+  stroke-width: 1px;
+}
+#wingspans .tick text {
+  fill: #b2b2b2;
+}
+#wingspans .connector {
+  stroke-width: 2px;
+}
+#wingspans text.label {
+  text-anchor: middle;
+  color: #424242;
+  font-size: 12px;
+}
+#wingspans text.label.bottom {
+  font-size: 10px;
+  color: #b2b2b2;
+}
+#wingspans foreignobject,
+#wingspans foreignobject body {
+  background: transparent!important;
+  min-width: 1px;
+}
+#wingspans .mask {
+  fill: red;
+  stroke-width: 4px;
+}
+#wingspans body {
+  min-height: 1px!important;
+  min-width: 1px!important;
+}

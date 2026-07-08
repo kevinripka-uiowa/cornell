@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/libs/modernizr.js"></script>
+    <link href="../css/citscimonthly.v2.css" rel="stylesheet">
+    <link href="dos-and-donts-of-feeder-placement.css" rel="stylesheet">
+
+    <style>
+      #autocomplete-container {
+        margin-bottom: 0.75rem;
+      }
+
+      #autocomplete-container gmp-place-autocomplete {
+        display: block;
+        width: 100%;
+        max-width: 36rem;
+      }
+
+      #clear-danger {
+        display: none;
+      }
+    </style>
+
+</head>
+<body>
+
+<div class="content-wrapper container">
+	<div class="row container">
+		<div class="content main-wrapper">
+
+		<article>
+
+
+<div class="article-header">
+			
+
+				<div class="article-header__title_wrapper">
+					<span class="type-icon-large type-icon-large--<?php echo $post_category[0]->slug;?>"></span>
+
+					<div class="article-header__title a>">
+					
+						<h1>Dos and Don'ts of Feeder Placement</h1>
+					</div>
+				</div>
+			</div><!-- article header -->
+
+<!---   ARTICLE FROM WP POSTS -->
+<div class="article--list">
+
+<h2>Finding a Safe Place</h2>
+
+<p>Finding the perfect location for a bird feeder is a balancing act between getting the views you want and birds’ safety. Where do you watch birds from? Your patio? A kitchen window? The living room? You can start by limiting the possible area by deciding on a focus zone in the yard.</p>
+
+<p>Next you need to check for known dangers to eliminate unsafe locations within that zone. Ornithologists estimate that millions of birds are killed each year by hitting windows. Window strike mortalities can be reduced by moving your feeders to within 3 feet of the window or greater than 30 feet away.</p>
+
+</div>
+
+<div id="map-wrap" class="clearfix article--list" style="margin-bottom:4em;border:1px solid #efefef;padding:1em;background-color:#272727;">
+<h2 style="margin:0;padding:0;border:0;margin-bottom:.2em;">Find Your Bird Feeder Window Danger Zones</h2>
+<h3 style="color:#fff;margin-bottom:1.2em;">Place your feeder in a safe place!</h3>
+<h4 style="margin-bottom:.9em;font-size:13px;font-weight:normal;line-height:1.4;" class="instructions">1. Find your address and zoom in<br />2. Click on your windows (and close neighbors' windows) to draw danger zones<br />3. Place your feeders where there is no danger zone!</h4>
+
+	<div class="clearfix" id="map-viz-wrap">
+			<div id="autocomplete-container"></div>
+			<div id="map-canvas" style="width:100%;height:400px;"></div>
+	</div>
+	<a href="javascript:void(0);" id="clear-danger"><span class="close-icon">×</span><span>clear danger zones</span></a>
+
+</div>
+
+
+<!-- END ARTICLE FROM WP POSTS -->
+
+</article>
+</div></div></div>
+
+    
+    <script src="../js/libs/jquery-1.10.2.min.js"></script>
+    <script src="../js/libs/jquery-ui-1.10.4.easing.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/libs/waypoints.min.js"></script>
+    <script>
+      let map;
+      let bounds;
+      let polygons = [];
+
+      // Draws a polygon ring. The outer radius is 30 ft and the inner
+      // radius is 3 ft, matching the feeder-placement guidance.
+      function drawCircle(point, radiusMiles, direction) {
+        const d2r = Math.PI / 180;
+        const r2d = 180 / Math.PI;
+        const earthRadiusMiles = 3963;
+        const points = 48;
+
+        const rlat = (radiusMiles / earthRadiusMiles) * r2d;
+        const rlng = rlat / Math.cos(point.lat() * d2r);
+        const path = [];
+
+        const start = direction === 1 ? 0 : points + 1;
+        const end = direction === 1 ? points + 1 : 0;
+
+        for (
+          let i = start;
+          direction === 1 ? i < end : i > end;
+          i += direction
+        ) {
+          const theta = Math.PI * (i / (points / 2));
+          const lng = point.lng() + rlng * Math.cos(theta);
+          const lat = point.lat() + rlat * Math.sin(theta);
+          path.push(new google.maps.LatLng(lat, lng));
+        }
+
+        return path;
+      }
+
+      async function initMap() {
+        const { Map } = await google.maps.importLibrary('maps');
+        const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
+
+        map = new Map(document.getElementById('map-canvas'), {
+          zoom: 4,
+          center: { lat: 39.8282, lng: -95.5795 },
+          mapTypeId: 'satellite',
+          mapTypeControl: false,
+          panControl: false,
+          zoomControl: true,
+          scaleControl: true,
+          streetViewControl: false,
+          fullscreenControl: true,
+          gestureHandling: 'greedy'
+        });
+
+        map.setTilt(0);
+        bounds = new google.maps.LatLngBounds();
+
+        // Modern Google Places autocomplete widget.
+        const autocompleteContainer = document.getElementById('autocomplete-container');
+        const autocomplete = new PlaceAutocompleteElement();
+        autocomplete.placeholder = 'Type your address';
+        autocomplete.includedRegionCodes = ['us', 'ca'];
+        autocompleteContainer.appendChild(autocomplete);
+
+        autocomplete.addEventListener('gmp-select', async ({ placePrediction }) => {
+          const place = placePrediction.toPlace();
+
+          await place.fetchFields({
+            fields: ['displayName', 'formattedAddress', 'location', 'viewport']
+          });
+
+          if (!place.location) return;
+
+          if (place.viewport) {
+            map.fitBounds(place.viewport);
+          } else {
+            map.setCenter(place.location);
+          }
+
+          // A close satellite view makes individual windows easier to click.
+          google.maps.event.addListenerOnce(map, 'idle', () => {
+            if (map.getZoom() < 20) map.setZoom(20);
+            map.setTilt(0);
+          });
+        });
+
+        // Click a window to add a 3–30 ft danger-zone ring.
+        map.addListener('click', (event) => {
+          const dangerZone = new google.maps.Polygon({
+            paths: [
+              drawCircle(event.latLng, 30 / 5280, 1),
+              drawCircle(event.latLng, 3 / 5280, -1)
+            ],
+            strokeColor: '#990000',
+            strokeOpacity: 0.9,
+            strokeWeight: 2,
+            fillColor: '#ff0000',
+            fillOpacity: 0.28,
+            clickable: false,
+            map
+          });
+
+          polygons.push(dangerZone);
+          $('#clear-danger').stop(true, true).slideDown(100, 'easeInOutQuad');
+        });
+
+        $('#clear-danger').on('click', function () {
+          polygons.forEach((polygon) => polygon.setMap(null));
+          polygons = [];
+          $(this).stop(true, true).slideUp(100, 'easeInOutQuad');
+        });
+      }
+
+      // Google calls this after the API script loads.
+      window.initMap = initMap;
+    </script>
+
+    <!--
+      Replace YOUR_GOOGLE_MAPS_API_KEY with your restricted browser API key.
+      Enable both Maps JavaScript API and Places API (New) in the same
+      Google Cloud project.
+    -->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWBo5EYjcW_5LVdGUEoq2bYlbbFvU6VzU&callback=initMap&v=weekly&loading=async">
+    </script>
+
+</body>
+</html>

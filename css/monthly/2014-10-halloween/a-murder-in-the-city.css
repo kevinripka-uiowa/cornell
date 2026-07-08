@@ -1,0 +1,99 @@
+#autocomplete {
+	width:100%;
+	padding:.3em;
+	font-size: 14px;
+	margin-bottom: 1em;
+}
+
+#map-side,#viz-side {
+	width: 50%;
+	float: left;
+}
+
+@media screen and (max-width:1000px) {
+	#map-side,#viz-side {
+		width: 100%;
+		float: none;
+	}
+}
+
+#map-viz-wrap {
+	background-color: #efefef;
+	padding: 1em;
+}
+
+#viz-side {
+	padding: .5em 0;
+	padding-left: 1em;
+	position: relative;
+}
+#viz-side h2 {
+	font-size: 12px;
+	text-align: center;
+	color:#454545;
+	text-transform: uppercase;
+}
+
+.gmnoprint img { max-width: none!important; width:auto;}
+     .gmnoprint label { width: auto; display: inline; } 
+     
+.urban {fill: #f15a2b;}
+.suburban{fill:#f06e16;}
+.rural{fill:#f8931f;}
+.wildland{fill:#fbaf41;}
+
+.viz-circle {
+	cursor:pointer;
+}
+
+#circle-viz {
+	position: relative;
+}
+
+.place-label {
+	font-size: 10px;
+}
+
+.place-label2 {
+	font-size: 9px;
+}
+
+#viz-side div.hr {
+	border-top: 1px dashed #c0c0c0;
+	position: absolute;
+	width: 96%;
+	height: 0;
+	left:0;
+}
+
+#hr1 {top:101px;}
+#hr2 {top:172px;}
+#hr3 {top:293px;}
+
+#viz-side .sublabel {
+	text-transform: uppercase;
+	text-align: right;
+	font-size: 14px;
+	position: absolute;
+	left: -10px;
+	font-weight: bold;
+	display: block;
+	width: 100px;
+}
+
+.sublabel.urban {
+	color: #f15a2b;
+	top: 58px;
+}
+.sublabel.suburban {
+	color: #f06e16;
+	top: 127px;
+}
+.sublabel.rural {
+	color: #f8931f;
+	top: 213px;
+}
+.sublabel.wildlands {
+	color: #fbaf41;
+	top: 355px;
+}

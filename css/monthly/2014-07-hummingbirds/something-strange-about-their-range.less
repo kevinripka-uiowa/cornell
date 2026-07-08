@@ -1,0 +1,72 @@
+@yellow:#fbc32b;
+
+@imgpath:'../../../img/article-images/2014-05-hummingbirds/something-strange-about-their-range/';
+
+.rounded(@radius:8px){
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	-o-border-radius:@radius;
+	border-radius:@radius;
+}
+
+/**** LESS VARIABLES ********/
+@thin:300;
+@normal:400;
+@semibold:600;
+@bold:700;
+@ultrabold:900;
+@black: #27272a;
+@green: #b9d532;
+@pink: #f372cc;
+@blue: #2babfb;
+@yellow: #fbc32b;
+@purple: #ca6afb;
+@lightgreen:#d0e35a;
+@lightyellow:#fcd751;
+@lightpurple:#dc91fc;
+@lightpink: #f798dd;
+@lightblue:#51c5fc;
+@nw: #263138;
+@pfw: #7cacdb;
+@ym: #6F9112;
+@cubs: #7855b9;
+
+
+/****** LESS MIXINS *********/
+.sans-serif(@weight:@normal,@style:normal){
+	font-family: 'Lato','Helvetica Neue Light', 'Helvetica Neue',sans-serif;
+	font-weight: @weight;
+}
+
+.shadow(){
+	-webkit-box-shadow: 0 0 2px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 0 2px rgba(0,0,0,.1);
+	box-shadow: 0 0 2px rgba(0,0,0,.1);
+}
+
+#range-map svg {
+	display: block;
+	margin: 0 auto;
+}
+
+#range-map {
+	height: 480px;
+	overflow: hidden;
+	border: 1px solid #efefef;
+}
+
+p.instructions {
+	.sans-serif();
+	font-size: 11px;
+}
+
+.source {
+	display: block;
+	float: right;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dppx),(-moz-device-pixel-ratio:2) { 
+	
+}
+

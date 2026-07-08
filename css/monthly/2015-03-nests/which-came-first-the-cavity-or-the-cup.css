@@ -1,0 +1,120 @@
+button:focus {outline:0;}
+button{ margin-right:10px}
+#cav-wrapper, #egg-wrapper, #circle-wrapper {
+	background-color: #F7F7F2;
+	padding:10px 10px 0;
+	margin-bottom: 2em;
+}
+
+#circle-wrapper  {
+	margin-bottom: 0;
+}
+
+small.circle {
+	font-family: 'Lato',sans-serif;
+	font-size: 9px;
+	background-color: #F7F7F2;
+	padding:0 10px 10px;
+	margin-bottom: 2em;
+	display: block;
+	text-align: center;
+}
+
+h4.circle {
+	background-color: #F7F7F2;
+	padding:0 10px 20px;
+	display: block;
+	text-align: center;
+}
+
+.tick line {
+	stroke:black;
+	opacity:.05;
+	stroke-dasharray: 5,5;
+}
+
+path.domain {
+	fill:transparent;
+}
+.tick text {
+	font-size: 9.5px;
+}
+
+#cav-wrapper h2,#egg-wrapper h2, #circle-wrapper h2 {
+	font-size: 1.3em!important;
+	font-weight: normal!important;
+	margin-bottom: 3px;
+	text-transform: uppercase;
+	letter-spacing: .02em;
+}
+
+small.circle {
+	font-family: 'Lato',sans-serif;
+	font-size: 9px;
+}
+
+#cav-wrapper h3, #egg-wrapper h3, #circle-wrapper h3 {
+	font-weight: normal;
+	font-style: italic;
+	 margin-bottom: 16px;
+	  color: #A3A3A3;
+	  font-size: 1em;
+}
+#egg-wrapper svg {
+	margin-top: 20px;
+}
+
+ .info, .label {
+      pointer-events: none;
+    }
+    .info text {
+      fill: white;
+    }
+    #circle circle {
+      fill: none;
+      pointer-events: all;
+    }
+    text {
+      cursor: default;
+      fill: #333;
+    }
+    .group-arc + text {
+      -webkit-transition: opacity 0.4s;
+      -moz-transition: opacity 0.4s;
+      -o-transition: opacity 0.4s;
+      transition: opacity 0.4s;
+    }
+    .group-arc.animate + text {
+      opacity: 0;
+    }
+    #circle path {
+      -webkit-transition: opacity 0.4s;
+      -moz-transition: opacity 0.4s;
+      -o-transition: opacity 0.4s;
+      transition: opacity 0.4s;
+    }
+    #circle:hover path.fade,
+    #circle path.unselected {
+      opacity: 0;
+      pointer-events: none;
+    }
+    text.fade {
+      opacity: 0;
+    }
+    .group-arc {
+      cursor: pointer;
+    }
+    text.region {
+      font-weight: bold;
+    }
+    .chord {
+      opacity: 0.75;
+    }
+    .chord:hover {
+      opacity: 1;
+    }
+    
+    .chord.fade {
+	    opacity:0;
+    }
+    

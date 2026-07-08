@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/libs/modernizr.js"></script>
+    <link href="../css/citscimonthly.v2.css" rel="stylesheet">
+    <link href="hungry-hungry-hummers.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="content-wrapper container">
+	<div class="row container">
+		<div class="content main-wrapper">
+
+		<article>
+
+
+<div class="article-header">
+			
+
+				<div class="article-header__title_wrapper">
+					<span class="type-icon-large type-icon-large--<?php echo $post_category[0]->slug;?>"></span>
+
+					<div class="article-header__title a>">
+					
+						<h1>Hungry Hungry Hummers</h1>
+					</div>
+				</div>
+			</div><!-- article header -->
+
+<!---   ARTICLE FROM WP POSTS -->
+
+<figure class="meme-img">
+  <img
+    src="../img/article-images/2014-07-hummingbirds/hungry-hungry-hummers/meme.jpg"
+    alt=""
+  />
+  <figcaption>Photo by Craig Curlee Photography</figcaption>
+</figure>
+
+<h2 class="center">Do You Eat Like a Bird? Not Likely.</h2>
+
+<p class="center">
+  Most of a hummingbird&#8217;s diet consists of nectar and insects.
+  Eating twice their body weight is an impressive feat. What if you drank
+  2 times your weight in high calorie, sugar-laden soda every day?
+  Enter your weight below to find out how much you’d have to drink.
+</p>
+
+<div id="hunger-games">
+
+  <form id="get-weight" action="" method="post">
+    <fieldset>
+      <label for="weight">Enter Your Weight in Pounds</label>
+      <input type="text" name="weight" id="weight" />
+      <button>
+        <img
+          src="../img/article-images/2014-07-hummingbirds/hungry-hungry-hummers/button.png"
+        />
+      </button>
+    </fieldset>
+  </form>
+
+  <div id="hunger-results" class="clearfix"></div>
+
+</div><!-- end hunger games -->
+
+<!-- END ARTICLE FROM WP POSTS -->
+
+</article>
+</div></div></div>
+
+    
+    <script src="../js/libs/jquery-1.10.2.min.js"></script>
+    <script src="../js/libs/jquery-ui-1.10.4.easing.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/libs/waypoints.min.js"></script>
+    <script src="../js/libs/d3.js"></script>
+    <script src="hungry-hungry-hummers.js"></script>
+
+</body>
+</html>

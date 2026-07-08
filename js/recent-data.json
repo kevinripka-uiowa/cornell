@@ -1,0 +1,83 @@
+[
+	{
+		"loginName":"DorothyZbornak",
+		"locationName": "Brooklyn, NY",
+		"lat": "40.6928",
+		"lng": "-73.9903",
+		"projId" : "Celebrate Urban Birds",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"BlancheDevereaux",
+		"locationName": "Bumblescum, MS",
+		"lat": "33",
+		"lng": "-90",
+		"projId" : "NestWatch",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"RoseNylund",
+		"locationName": "St. Olaf, MN",
+		"lat": "46.1539",
+		"lng": "-95.8203",
+		"projId" : "Project FeederWatch",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"SophiaPetrillo",
+		"locationName": "Palermo, Sicily",
+		"lat": "38.1167",
+		"lng": "13.3667",
+		"projId" : "YardMap",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"goldengirlfan1",
+		"locationName": "Ithaca, NY",
+		"lat": "42.4433",
+		"lng": "-76.5",
+		"projId" : "YardMap",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"goldengirls4eva",
+		"locationName": "Portland, OR",
+		"lat": "45.52",
+		"lng": "-122.6819",
+		"projId" : "NestWatch",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"StanleysWig",
+		"locationName": "New York NY",
+		"lat": "40.7127",
+		"lng": "-74.0059",
+		"projId" : "Celebrate Urban Birds",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"ThankYouFOrBeingaFriend",
+		"locationName": "Miami, FL",
+		"lat": "25.7877",
+		"lng": "-80.2241",
+		"projId" : "YardMap",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"BackInStOlaf",
+		"locationName": "Aspen, CO",
+		"lat": "39.1922",
+		"lng": "-106.8244",
+		"projId" : "NestWatch",
+		"timestamp" : "1403723248000"
+	},
+	{
+		"loginName":"BlancheWasAHussy",
+		"locationName": "Nashville, TN",
+		"lat": "36.1667",
+		"lng": "-86.7833",
+		"projId" : "Project FeederWatch",
+		"timestamp" : "1403723248000"
+	}
+
+]

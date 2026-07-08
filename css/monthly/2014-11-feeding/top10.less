@@ -1,0 +1,218 @@
+@cardinal: #d61919;
+@junco: #666;
+@chickadee: #927a4c;
+@goldfinch: #dddf1b;
+@dove: #c7b18c;
+@downy: #000;
+@finch: #d1553d;
+@jay: #1b6fad;
+@robin: #914716;
+@sparrow: #db953f;
+
+@font-face {
+    font-family: 'provincelyregular';
+    src: url('../../../fonts/provincely-webfont.eot');
+    src: url('../../../fonts/provincely-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../fonts/provincely-webfont.woff2') format('woff2'),
+         url('../../../fonts/provincely-webfont.woff') format('woff'),
+         url('../../../fonts/provincely-webfont.ttf') format('truetype'),
+         url('../../../fonts/provincely-webfont.svg#provincelyregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ @font-face {
+     font-family: 'StateFaceRegular';
+     src: url('../../../fonts/stateface-regular-webfont.eot');
+     src: url('../../../fonts/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+          url('../../../fonts/stateface-regular-webfont.woff') format('woff'),
+          url('../../../fonts/stateface-regular-webfont.ttf') format('truetype'),
+          url('../../../fonts/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ 
+.region {
+	position: relative;
+	border-right:1px solid #ddd;
+	width:50px;
+	height:50px;
+	vertical-align: middle;
+	padding-top: 5px;
+	overflow: hidden;
+	color: #272727;
+	display:inline-block;
+	text-align: center;
+} 
+ 
+.stateface {
+	display: block;
+} 
+
+.region:hover {
+	cursor: pointer;
+	background-color: #efefef;
+}
+ 
+.stateface-us {
+	font-size: 35px;
+	font-family: StateFaceRegular;
+}
+
+.stateface-ca {
+	font-family: provincelyregular;
+}
+
+#bird-column {
+	padding-top: 50px;
+	border-right: 2px solid #ddd;
+	display:table;     
+   border-collapse:collapse;
+	
+	div {
+		text-align: right;
+		width:100%;
+		display: block;
+		padding-right: 1em;
+		height:20px;
+	}
+}
+
+#region-header {
+	border-bottom: 1px solid #efefef;
+}
+
+.abbr-ab {
+	font-size: 8.9em;
+	margin-top: -0.6em;
+}
+
+.abbr-bc {
+	font-size: 8em;
+	margin-top: -0.55em;
+	margin-left: 0.14em;
+}
+
+.abbr-mb {
+	font-size: 9.5em;
+margin-top: -0.66em;
+margin-left: -0.21em;
+}
+
+.abbr-nb {
+	font-size: 31.7em;
+margin-top: -0.88em;
+margin-left: -0.75em;
+}
+
+.abbr-nl {
+	font-size: 10.5em;
+margin-left: -0.7em;
+margin-top: -0.64em;
+}
+.abbr-nt {
+	font-size: 24em;
+margin-left: -0.78em;
+margin-top: -0.88em;
+}
+.abbr-ns {
+	font-size: 6em;
+margin-left: 0.05em;
+margin-top: -0.23em;
+}
+
+.abbr-nu {
+	font-size: 4.3em;
+margin-left: -0.05em;
+margin-top: -0.06em;
+}
+
+.abbr-on {
+	font-size: 7.5em;
+margin-left: -0.3em;
+margin-top: -0.73em;
+}
+
+.abbr-pei {
+	font-size: 37em;
+margin-left: -0.8em;
+margin-top: -0.88em;
+}
+
+.abbr-qu {
+	font-size: 7em;
+margin-left: -0.45em;
+margin-top: -0.58em;
+}
+
+.abbr-sa {
+	font-size: 9em;
+margin-left: -.1em;
+margin-top: -0.63em;
+}
+
+.abbr-yt {
+	font-size: 9em;
+margin-top: -0.33em;
+margin-left: .1em;
+}
+
+.sep {
+	stroke:#efefef;
+}
+
+.article__content {
+	padding-right: 0;
+}
+
+
+.bird.noca {border-right:4px solid @cardinal;}
+.bird.deju {border-right:4px solid @junco;}
+.bird.chick {border-right:4px solid @chickadee;}
+.bird.amgo {border-right:4px solid @goldfinch;}
+.bird.modo {border-right:4px solid @dove;}
+.bird.dowo {border-right:4px solid @downy;}
+.bird.hofi {border-right:4px solid @finch;}
+.bird.blja {border-right:4px solid @jay;}
+.bird.amro {border-right:4px solid @robin;}
+.bird.hosp {border-right:4px solid @sparrow;}
+
+circle.circle-noca {fill:@cardinal;}
+circle.circle-deju {fill:@junco;}
+circle.circle-chick {fill:@chickadee;}
+circle.circle-amgo {fill:@goldfinch;}
+circle.circle-modo {fill:@dove;}
+circle.circle-dowo {fill:@downy;}
+circle.circle-hofi {fill:@finch;}
+circle.circle-blja {fill:@jay;}
+circle.circle-amro {fill:@robin;}
+circle.circle-hosp {fill:@sparrow;}
+
+path {
+	fill:transparent;	
+	stroke-width:1px;
+}
+
+.path-noca {stroke:@cardinal;}
+.path-deju {stroke:@junco;}
+.path-chick {stroke:@chickadee;}
+.path-amgo {stroke:@goldfinch;}
+.path-modo {stroke:@dove;}
+.path-dowo {stroke:@downy;}
+.path-hofi {stroke:@finch;}
+.path-blja {stroke:@jay;}
+.path-amro {stroke:@robin;}
+.path-hosp {stroke:@sparrow;}
+
+/*
+.affix {
+  position: fixed;
+  top:44px;
+  
+}
+*/
+
+#region-header-fix {
+	background-color: #fff;
+}

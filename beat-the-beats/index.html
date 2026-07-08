@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/libs/modernizr.js"></script>
+    <link href="../css/citscimonthly.v2.css" rel="stylesheet">
+    <link href="beat-the-beats.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="content-wrapper container">
+	<div class="row container">
+		<div class="content main-wrapper">
+
+		<article>
+
+
+<div class="article-header">
+			
+
+				<div class="article-header__title_wrapper">
+					<span class="type-icon-large type-icon-large--<?php echo $post_category[0]->slug;?>"></span>
+
+					<div class="article-header__title a>">
+					
+						<h1>Beat the Beats</h1>
+					</div>
+				</div>
+			</div><!-- article header -->
+
+<!---   ARTICLE FROM WP POSTS -->
+
+
+    <p>North American Hummingbirds average 53 beats per second in normal flight! Can your fingers keep up? Click “start” below and, on go, click in the box below for 5 seconds to compare your finger speed to a hummingbird's wings!</p>
+
+<div id="beat-beats" class="clearfix">
+	<div id="beat-hitzone">
+		<div class="beat-hit">
+			<p>Click anywhere in this box on go!</p>
+			<div class="beat-chart-bg"><div></div></div>
+		</div>
+	</div>
+
+	<a href="javascript:void(0);" id="start-btn">start</a>
+
+	<div id="lights">
+		<div class="ready"><span class="light"></span> <span class="text">Ready</span></div>
+		<div class="set"><span class="light"></span> <span class="text">Set</span></div>
+		<div class="go"><span class="light"></span> <span class="text">Go!</span></div>
+	</div>
+
+	<div id="labels">
+		<div id="hummingbird">
+			<span class="number">53</span>
+		</div>
+		<span class="explanation">beats per second average</span>
+
+		<div id="user">
+			<span class="number">??</span>
+		</div>
+		<span class="explanation">beats per second average</span>
+	</div>
+
+	<div id="beat-svg"></div>
+</div><!-- end beat beats -->
+
+<div id="wingspans" style="">
+
+	<h1>Wingspan and Wingbeats</h1>
+
+	<p>Hummingbird wingspans range from the tiny Bee Hummingbird which lives in Cuba to the Giant Hummingbird which makes its home in South America. Look below to see how wingbeat speed compares to wingspans. Do you notice any trend?</p>
+
+	<p class="instructions">Mouse over a hummingbird to see only its graph.</p>
+
+	<div id="wingspan-svg"></div>
+
+</div><!-- end wingspans -->
+
+<div class="source clearfix">Sources: All About Birds</div>
+
+<!-- END ARTICLE FROM WP POSTS -->
+
+</article>
+</div></div></div>
+
+    
+    <script src="../js/libs/jquery-1.10.2.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/libs/waypoints.min.js"></script>
+    <script src="../js/libs/d3.js"></script>
+    <script src="beat-the-beats.js"></script>
+
+</body>
+</html>

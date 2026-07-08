@@ -1,0 +1,312 @@
+@red:#f2133d;
+@black: #d6d6d6;
+
+.rounded(@radius:8px){
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	-o-border-radius:@radius;
+	border-radius:@radius;
+}
+
+/**** LESS VARIABLES ********/
+@thin:300;
+@normal:400;
+@semibold:600;
+@bold:700;
+@ultrabold:900;
+@black: #27272a;
+@green: #b9d532;
+@pink: #f372cc;
+@blue: #2babfb;
+@yellow: #fbc32b;
+@purple: #ca6afb;
+@lightgreen:#d0e35a;
+@lightyellow:#fcd751;
+@lightpurple:#dc91fc;
+@lightpink: #f798dd;
+@lightblue:#51c5fc;
+@nw: #263138;
+@pfw: #7cacdb;
+@ym: #6F9112;
+@cubs: #7855b9;
+
+
+/****** LESS MIXINS *********/
+.sans-serif(@weight:@normal,@style:normal){
+	font-family: 'Lato','Helvetica Neue Light', 'Helvetica Neue',sans-serif;
+	font-weight: @weight;
+}
+
+#beat-beats {
+	position: relative;
+	margin-left: 3em;
+	border:1px solid #d6d6d6;
+	margin-top: 70px;
+	height: 350px;
+	display: block;
+	margin-bottom: 4em;
+	
+	* {
+		-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+	}
+
+	#start-btn {
+		color: #fff;
+		display: block;
+		width:100px;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		background-color: @red;
+		.rounded(100%);
+		text-decoration: none;
+		text-transform: uppercase;
+		font-style: italic;
+		letter-spacing: .1em;
+		position: absolute;
+		top:-50px;
+		left: -50px;
+		
+		&:hover {
+			background-color: darken(@red,10%);
+		}
+	}
+	
+	#lights {
+		position: absolute;
+		top:50%;
+		left: 50%;
+		display: none;
+		background-color:#fff;
+		padding: 10px;
+		z-index: 101;
+		margin-left: -123px;
+		margin-top: -70px;
+		
+		div {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 20px;
+			
+			span {
+				vertical-align: middle;
+				display:inline-block;
+				color: #d6d6d6;
+			}
+			
+			.light {
+				margin-right: 5px;
+				width:20px;
+				height: 20px;
+				.rounded(100%);
+				background-color: #d6d6d6;
+			}
+			
+		&.ready.on {
+				.light {background-color: @red;}
+				.text{color:#444;}
+			}
+			
+		&.set.on {
+				.light {background-color: #f7f028;}
+				.text{color:#444;}
+			}
+			
+		&.go.on {
+				.light {background-color: #6fc144;}
+				.text{color:#444;}
+			}
+			
+		}
+	}
+	
+	#labels {
+		width: 124px;
+		padding-top: 60px;
+		padding-left: 20px;
+		text-align: center;
+		float: left;
+		margin-bottom: 2em;
+		z-index: 1;
+		
+		div {
+			display: block;
+			width:97px;
+			height: 90px;
+			background: url('../../../img/article-images/2014-05-hummingbirds/beat-the-beats/labels.jpg') no-repeat 0 0;
+			position: relative;
+			
+			&#user {
+				background-position: 0 bottom;
+			}
+			
+		}
+		.explanation {
+			text-align: center;
+			color: #a2a2a2;
+			margin-bottom: .4em;
+			display: block;
+		}
+		
+		.number {
+			font-size: 2em;
+			font-weight: 600;
+			position: absolute;
+			top:55px;
+			right: 0;
+		}
+		
+		#user .number {
+			top:25px;
+		}
+	}
+	
+	#beat-svg {
+		margin:2em 1em 1em 140px;
+		display: block;
+		height: 265px;
+		
+		rect {
+			stroke : @black;
+			fill: transparent;
+		}
+		
+		line {
+			stroke : @black;
+			stroke-width:1px;
+		}
+		
+		path {
+			stroke: @red;
+			stroke-width:1px;
+			fill: transparent;
+		}
+	}
+	
+	#beat-hitzone {
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background-color:rgba(242,19,61,.9);
+		display: none;
+		z-index: 99;
+		padding: 20px;
+		
+		.beat-hit {
+			border:1px dashed #fff;
+			height: 310px;
+			background-color:@red;
+			opacity: 1;
+		}
+		
+		p {
+			color: #fff;
+			text-align: center;
+			.sans-serif(@thin);
+			font-size: 24px;
+			line-height: 24px;
+			margin-top:50%;
+			position: relative;
+			top:50%;
+			left:0;
+			margin-top: -12px;
+			max-width: 100%;
+		}
+		
+		.beat-chart-bg {
+			background-color: #7b0a1f;
+			width: 90%;
+			display: none;
+			margin: 0 auto;
+			position: absolute;
+			bottom: 60px;
+			left: 50%;
+			z-index: 9999;
+			height: 20px;
+			margin-left: -45%;
+			
+			div {
+				background-color: @red;
+				display: block;
+				width:0;
+				height:12px;
+				margin-top: 4px;
+			}
+		}
+	}
+	
+} // beat beats to wrap all css
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dppx),(-moz-device-pixel-ratio:2) { 
+	#beat-beats #labels div {
+		background-image: url('../../../img/article-images/2014-05-hummingbirds/beat-the-beats/labels@2x.jpg');
+		background-size: 97px 200px;
+	}
+}
+
+#wingspans {
+	
+	.instructions {
+		font-size: 11px;
+		line-height: 13px;
+		.sans-serif();
+		width: 150px;
+		color: #999;
+	}
+	
+	path.domain {
+		fill:none;
+		stroke: #b2b2b2;
+		stroke-width:1px;
+	}
+	
+	.tick {
+		line {
+			stroke:#b2b2b2;
+			stroke-width:1px;
+		}
+		
+		text {
+			fill: #b2b2b2;
+		}
+	}
+	
+	.connector {
+		stroke-width:2px;
+	}
+	
+	text.label {
+		text-anchor:middle;
+		color: #424242;
+		font-size: 12px;
+		
+		&.bottom {
+			font-size: 10px;
+			color: #b2b2b2;
+		}
+	}
+	
+	foreignobject,foreignobject body {
+		background: transparent!important;
+		min-width:1px;
+	}
+	
+	.mask {
+		fill: red;
+		stroke-width: 4px;
+	}
+	
+	body {
+		min-height: 1px!important;
+		min-width: 1px!important;
+	}
+	
+} // wingspans

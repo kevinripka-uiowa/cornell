@@ -1,0 +1,224 @@
+/**** LESS VARIABLES ********/
+/****** LESS MIXINS *********/
+#frug-wrapper {
+  border: 8px solid #27272a;
+  padding: 10px;
+}
+#frug-content {
+  border: 1px solid #27272a;
+  padding: 1em;
+  text-align: center;
+  letter-spacing: .2em;
+  background: url(../../../img/article-images/2014-08-berries/frug/subtle_white_feathers.png);
+}
+.frug-bird {
+  text-align: center;
+  padding: 1em;
+}
+.frug-bird img {
+  display: block;
+  max-width: 100%;
+}
+.frug-bird__content {
+  border: 4px solid #27272a;
+  text-align: center;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1em .5em;
+  background-color: #fff;
+}
+.frug-bird__content h2 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: .3em;
+}
+.frug-bird__content .frug-latin {
+  margin-bottom: 1em;
+}
+.frug-bird__content button {
+  text-transform: uppercase;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .2em;
+}
+#frug-weight-collect {
+  display: none;
+  height: 500px;
+}
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#frug-weight-collect form {
+  background-color: #eaf2c1;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  padding: .5em 1.5em;
+  margin: 0 auto;
+}
+#frug-weight-collect form input,
+#frug-weight-collect form button {
+  display: inline-block;
+  vertical-align: middle;
+}
+#frug-weight-collect form input {
+  font-size: 18px;
+  padding: .3em;
+}
+#frug-weight-collect form button,
+#frug-weight-collect form button:hover {
+  background-color: transparent;
+}
+#frug-weight-collect form button img,
+#frug-weight-collect form button:hover img {
+  max-width: 50px;
+}
+.frug-bird-img {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.frug-bird-infographic {
+  text-align: center;
+  display: none;
+}
+.fbi__content {
+  border: 4px solid #555;
+  background-color: #fff;
+  padding: 1em;
+}
+.fbi__content h2,
+.fbi__content h3,
+.fbi__content p,
+.fbi__content h4,
+.fbi__content h5 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .3em;
+}
+.fbi__content p {
+  letter-spacing: normal;
+  margin: 0 auto 2em;
+}
+.fbi__content h2,
+.fbi__content h5 {
+  text-transform: uppercase;
+  color: #79797d;
+}
+.fbi__content h2 sup,
+.fbi__content h5 sup {
+  font-size: 12px;
+}
+.fbi__content h2 {
+  line-height: 1.7;
+}
+.fbi__content h2.no {
+  margin-bottom: 0;
+}
+.fbi__content h3 {
+  font-size: 5em;
+  font-weight: bold;
+}
+.fbi__content h4 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: .3em;
+}
+.fbi__content h5 {
+  line-height: 1.5em;
+}
+.fbi__content h5.about {
+  margin: 2em 0;
+}
+.fbi__content h6 {
+  color: #79797d;
+  margin-bottom: 2em;
+  margin-top: -0.5em;
+  font-size: .8em;
+  font-weight: normal;
+}
+.fbi__section h4 img,
+.fbi__section h4 span {
+  display: inline;
+  vertical-align: middle;
+}
+.fbi__section {
+  padding: 2em 1em;
+  border-bottom: 2px dashed #555;
+}
+.frug-shim {
+  text-align: center;
+}
+.icon-holder {
+  display: inline-block;
+}
+.berry {
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  float: left;
+  margin-right: 1px;
+}
+#mistletoe .berry {
+  background-color: #ae0e19;
+}
+#cedar-berries .berry {
+  background-color: #ae0e19;
+}
+.blueberries .berry {
+  background-color: #406cb1;
+}
+.butter {
+  display: block;
+  height: 25px;
+  background: url('../../../img/article-images/2014-08-berries/frug/butter-left.png');
+  background-size: 62px 25px;
+  margin-right: 10px;
+  float: left;
+  margin-bottom: 10px;
+  position: relative;
+}
+.butter:after {
+  content: '';
+  background: url('../../../img/article-images/2014-08-berries/frug/butter-right.png');
+  background-size: 6px 25px;
+  display: block;
+  width: 6px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.pint {
+  display: block;
+  height: 45px;
+  width: 45px;
+  background: url('../../../img/article-images/2014-08-berries/frug/pint.jpg');
+  background-size: 45px 45px;
+  margin-right: 10px;
+  float: left;
+  margin-bottom: 10px;
+  position: relative;
+}
+#phainopepla button {
+  float: right;
+}
+#cedar button {
+  float: left;
+}

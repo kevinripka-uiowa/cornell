@@ -1,0 +1,23 @@
+/**** LESS VARIABLES ********/
+/****** LESS MIXINS *********/
+#range-map svg {
+  display: block;
+  margin: 0 auto;
+}
+#range-map {
+  height: 480px;
+  overflow: hidden;
+  border: 1px solid #efefef;
+}
+p.instructions {
+  font-family: 'Lato', 'Helvetica Neue Light', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+}
+.source {
+  display: block;
+  float: right;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx), (-moz-device-pixel-ratio: 2) {
+  
+}
