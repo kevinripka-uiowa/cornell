@@ -102,7 +102,7 @@
   display: block;
   width: 97px;
   height: 90px;
-  background: url('../../../img/article-images/2014-07-hummingbirds/beat-the-beats/labels.jpg') no-repeat 0 0;
+  background: url('../img/article-images/2014-07-hummingbirds/beat-the-beats/labels.jpg') no-repeat 0 0;
   position: relative;
 }
 #beat-beats #labels div#user {
@@ -194,7 +194,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx), (-moz-device-pixel-ratio: 2) {
   #beat-beats #labels div {
-    background-image: url('../../../img/article-images/2014-07-hummingbirds/beat-the-beats/labels@2x.jpg');
+    background-image: url('../img/article-images/2014-07-hummingbirds/beat-the-beats/labels@2x.jpg');
     background-size: 97px 200px;
   }
 }
